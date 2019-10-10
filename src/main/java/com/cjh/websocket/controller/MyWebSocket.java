@@ -35,6 +35,14 @@ public class MyWebSocket {
         }
     }
 
+    /**
+     * 可以在打开时候就进行
+     * 后台到前台的数据传输（利用sendMessage（））
+     * 例如kafka向前台传输数据
+     * @param param
+     * @param session
+     * @param config
+     */
     @OnOpen
     public void onOpen(@PathParam(value = "userno") String param, Session session, EndpointConfig config){
         System.out.println(session.getId()+" open...");

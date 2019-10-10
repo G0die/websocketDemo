@@ -25,6 +25,14 @@ public class IndexController {
         return new ModelAndView("index");
     }
 
+    /**
+     * 后台向前端发送消息
+     * 延伸定时任务
+     * ...
+     * @param request
+     * @param response
+     * @throws IOException
+     */
     @RequestMapping(value = "test")
     public void test(HttpServletRequest request, HttpServletResponse response) throws IOException {
         MyWebSocket.sendMessage("10s后关闭服务器");
